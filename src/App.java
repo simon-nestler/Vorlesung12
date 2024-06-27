@@ -9,8 +9,12 @@ import de.thi.riener.Person;
 
 public class App {
     public static void main(String[] args) {
-        int ergebnis = methodeWirftMehrereExceptions();
-        System.out.println(ergebnis);
+        castException();
+    }
+
+    public static void castException() {
+        Object s = "abc";
+        Integer i = (Integer) s;
     }
 
     public static void exkursIfElseReihenfolge(int zahl) {
@@ -75,8 +79,13 @@ public class App {
         }
     }
 
-    public static void readFile() throws FileNotFoundException {
-        BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
+    public static void readFile() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public static void nullPointer() {
