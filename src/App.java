@@ -1,8 +1,50 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+
 import de.thi.riener.Person;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        divisionDurchNull();
+    public static void main(String[] args) {
+        // methodeWirftMehrereExceptions();
+        exkursIfElseReihenfolge(5);
+        exkursIfElseReihenfolge(15);
+        exkursIfElseReihenfolge(25);
+
+    }
+
+    public static void exkursIfElseReihenfolge(int zahl) {
+        if (zahl <= 10) {
+            System.out.println("Zahl ist kleiner als 10");
+        } else if ((zahl > 10) && (zahl <= 20)) {
+            System.out.println("Zahl ist zwischen 11 und 20");
+        } else if ((zahl > 20) && (zahl <= 30)) {
+            System.out.println("Zahl ist zwischen 21 und 30");
+        }
+    }
+
+    public static void methodeWirftMehrereExceptions() {
+        try {
+            getJFrame().setSize(400, 300);
+
+            int a = 100;
+            int b = 0;
+            int c = a / b;
+            System.out.println(c);
+        } catch (ArithmeticException e) {
+            System.err.println("Division durch 0 ist nicht erlaubt");
+        } catch (NullPointerException e) {
+            System.err.println("JFrame ist null");
+        } catch (Exception e) {
+            System.err.println("Ein Fehler ist aufgetreten");
+        }
+    }
+
+    public static JFrame getJFrame() {
+        return null;
     }
 
     public static void divisionDurchNull() {
@@ -26,6 +68,10 @@ public class App {
         } catch (ArithmeticException e) {
             System.err.println("Division durch 0 ist nicht erlaubt");
         }
+    }
+
+    public static void readFile() throws FileNotFoundException {
+        BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
     }
 
     public static void nullPointer() {
