@@ -29,8 +29,8 @@ public class App {
 
             int a = 100;
             int b = 0;
-            int c = a / b;
-            return c;
+            // int c = a / b;
+            return a;
         } catch (ArithmeticException e) {
             System.err.println("Division durch 0 ist nicht erlaubt");
             return 0;
@@ -42,6 +42,7 @@ public class App {
             return -2;
         } finally {
             System.out.println("Finally-Block wird immer ausgeführt");
+            // Gut geeignet zum Freigeben von Ressourcen
         }
 
         // System.out.println("Wird dieser Code nicht auch immer ausgeführt?");
