@@ -9,8 +9,8 @@ import de.thi.riener.Person;
 
 public class App {
     public static void main(String[] args) {
-        methodeWirftMehrereExceptions();
-
+        int ergebnis = methodeWirftMehrereExceptions();
+        System.out.println(ergebnis);
     }
 
     public static void exkursIfElseReihenfolge(int zahl) {
@@ -23,22 +23,28 @@ public class App {
         }
     }
 
-    public static void methodeWirftMehrereExceptions() {
+    public static int methodeWirftMehrereExceptions() {
         try {
             // getJFrame().setSize(400, 300);
 
             int a = 100;
             int b = 0;
-            // int c = a / b;
+            int c = a / b;
+            return c;
         } catch (ArithmeticException e) {
             System.err.println("Division durch 0 ist nicht erlaubt");
+            return 0;
         } catch (NullPointerException e) {
             System.err.println("JFrame ist null");
+            return -1;
         } catch (Exception e) {
             System.err.println("Ein Fehler ist aufgetreten");
+            return -2;
         } finally {
             System.out.println("Finally-Block wird immer ausgeführt");
         }
+
+        // System.out.println("Wird dieser Code nicht auch immer ausgeführt?");
         // Sortierung der Exceptions ist wichtig
         // Von spezifisch zu allgemein
     }
