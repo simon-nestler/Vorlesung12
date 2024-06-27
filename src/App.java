@@ -33,15 +33,13 @@ public class App {
             return a;
         } catch (ArithmeticException e) {
             System.err.println("Division durch 0 ist nicht erlaubt");
-            return 0;
         } catch (NullPointerException e) {
             System.err.println("JFrame ist null");
-            return -1;
         } catch (Exception e) {
             System.err.println("Ein Fehler ist aufgetreten");
-            return -2;
         } finally {
             System.out.println("Finally-Block wird immer ausgeführt");
+            return -3;
             // Gut geeignet zum Freigeben von Ressourcen
         }
 
