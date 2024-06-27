@@ -9,10 +9,7 @@ import de.thi.riener.Person;
 
 public class App {
     public static void main(String[] args) {
-        // methodeWirftMehrereExceptions();
-        exkursIfElseReihenfolge(5);
-        exkursIfElseReihenfolge(15);
-        exkursIfElseReihenfolge(25);
+        methodeWirftMehrereExceptions();
 
     }
 
@@ -28,19 +25,22 @@ public class App {
 
     public static void methodeWirftMehrereExceptions() {
         try {
-            getJFrame().setSize(400, 300);
+            // getJFrame().setSize(400, 300);
 
             int a = 100;
             int b = 0;
-            int c = a / b;
-            System.out.println(c);
+            // int c = a / b;
         } catch (ArithmeticException e) {
             System.err.println("Division durch 0 ist nicht erlaubt");
         } catch (NullPointerException e) {
             System.err.println("JFrame ist null");
         } catch (Exception e) {
             System.err.println("Ein Fehler ist aufgetreten");
+        } finally {
+            System.out.println("Finally-Block wird immer ausgeführt");
         }
+        // Sortierung der Exceptions ist wichtig
+        // Von spezifisch zu allgemein
     }
 
     public static JFrame getJFrame() {
