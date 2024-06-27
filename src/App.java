@@ -19,9 +19,9 @@ public class App {
     public static void exkursIfElseReihenfolge(int zahl) {
         if (zahl <= 10) {
             System.out.println("Zahl ist kleiner als 10");
-        } else if ((zahl > 10) && (zahl <= 20)) {
+        } else if (zahl <= 20) {
             System.out.println("Zahl ist zwischen 11 und 20");
-        } else if ((zahl > 20) && (zahl <= 30)) {
+        } else if (zahl <= 30) {
             System.out.println("Zahl ist zwischen 21 und 30");
         }
     }
